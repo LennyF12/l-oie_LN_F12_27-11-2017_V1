@@ -1,0 +1,43 @@
+Algo Jeu_de_loie
+
+CONST
+	 mort<-58 :entier
+	 fin<-66 :entier
+	 multiple<-9 :entier
+
+
+VAR 
+	case, jet :entier
+
+DEBUT
+
+	case<-0
+	jet<-0
+	
+	REPETER
+
+		ECRIRE case
+
+		REPETER 
+			ECRIRE "Entrez la valeur de votre jet"
+			LIRE jet
+		JUSQU'A (jet>=2) et (jet<=12)
+
+		Si case MOD 9 = 0 et case< fin-multiple ALORS
+		FINSI
+
+			case<- case+jet
+
+		SI case> 66 ALORS
+			case<- case -(dé-case)
+
+		SI case= tete de mort ALORS
+			Ecrire "Pas de chance tu recommences"
+			case<-0
+		FINSI
+
+	JUSQU'A (case = fin)
+	
+	ECRIRE "VIctoire"
+
+FIN
